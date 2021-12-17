@@ -1,0 +1,252 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Dec 15 20:24:39 2021
+
+@author: EGYPT
+"""
+
+
+import requests 
+from bs4 import BeautifulSoup
+import csv 
+from itertools import zip_longest 
+a= []
+t= []
+links = []
+bname = []
+c = []
+result = requests.get("https://www.arab-books.com/%d8%a7%d9%84%d9%85%d8%a4%d9%84%d9%81%d9%88%d9%86/")
+src = result.content 
+soup = BeautifulSoup(src,"lxml")
+author = soup.find_all("h3",{"class":"post-title"})
+
+for i in range( len(author) ):
+    bname.append(author[i].find("a").attrs['href'])
+
+for i in range(len(bname)) :
+  resul=requests.get(bname[i])
+  src = resul.content
+  soup = BeautifulSoup(src,"lxml")
+  books = soup.find_all("h3",{"class":"post-title"})
+  c.append(len(books))
+  for j in range(len(books)) :
+     links.append(books[j].text)
+     t.append(books[j].find("a").attrs['href'])
+
+for i in range( len(author) ):
+    m=c[i]
+    for j in range(m) :
+        a.append(author[i].text)
+    
+    
+
+result = requests.get("https://www.arab-books.com/%d8%a7%d9%84%d9%85%d8%a4%d9%84%d9%81%d9%88%d9%86//page/2")
+src = result.content 
+soup = BeautifulSoup(src,"lxml")
+author = soup.find_all("h3",{"class":"post-title"})
+for i in range( len(author) ):
+    
+    bname.append(author[i].find("a").attrs['href'])
+
+for i in range(len(bname)) :
+  resul=requests.get(bname[i])
+  src = resul.content
+  soup = BeautifulSoup(src,"lxml")
+  books = soup.find_all("h3",{"class":"post-title"})
+  for j in range(len(books)) :
+     links.append(books[j].text)
+     t.append(books[j].find("a").attrs['href'])
+for i in range( len(author) ):
+    m=c[i]
+    for j in range(m) :
+        a.append(author[i].text)
+
+
+result = requests.get("https://www.arab-books.com/%D8%A7%D9%84%D9%85%D8%A4%D9%84%D9%81%D9%88%D9%86//page/3")
+src = result.content 
+soup = BeautifulSoup(src,"lxml")
+author = soup.find_all("h3",{"class":"post-title"})
+for i in range( len(author) ):
+    
+    bname.append(author[i].find("a").attrs['href'])
+
+for i in range(len(bname)) :
+  resul=requests.get(bname[i])
+  src = resul.content
+  soup = BeautifulSoup(src,"lxml")
+  books = soup.find_all("h3",{"class":"post-title"})
+  for j in range(len(books)) :
+     links.append(books[j].text)
+     t.append(books[j].find("a").attrs['href'])
+for i in range( len(author) ):
+    m=c[i]
+    for j in range(m) :
+        a.append(author[i].text)
+    
+    
+
+result = requests.get("https://www.arab-books.com/%d8%a7%d9%84%d9%85%d8%a4%d9%84%d9%81%d9%88%d9%86//page/4")
+src = result.content 
+soup = BeautifulSoup(src,"lxml")
+author = soup.find_all("h3",{"class":"post-title"})
+for i in range( len(author) ):
+    
+    bname.append(author[i].find("a").attrs['href'])
+
+for i in range(len(bname)) :
+  resul=requests.get(bname[i])
+  src = resul.content
+  soup = BeautifulSoup(src,"lxml")
+  books = soup.find_all("h3",{"class":"post-title"})
+  for j in range(len(books)) :
+     links.append(books[j].text)
+     t.append(books[j].find("a").attrs['href'])
+for i in range( len(author) ):
+    m=c[i]
+    for j in range(m) :
+        a.append(author[i].text)
+    
+
+result = requests.get("https://www.arab-books.com/%d8%a7%d9%84%d9%85%d8%a4%d9%84%d9%81%d9%88%d9%86//page/5")
+src = result.content 
+soup = BeautifulSoup(src,"lxml")
+author = soup.find_all("h3",{"class":"post-title"})
+for i in range( len(author) ):
+    
+    bname.append(author[i].find("a").attrs['href'])
+
+for i in range(len(bname)) :
+  resul=requests.get(bname[i])
+  src = resul.content
+  soup = BeautifulSoup(src,"lxml")
+  books = soup.find_all("h3",{"class":"post-title"})
+  for j in range(len(books)) :
+     links.append(books[j].text)
+     t.append(books[j].find("a").attrs['href'])
+for i in range( len(author) ):
+    m=c[i]
+    for j in range(m) :
+        a.append(author[i].text)
+
+
+result = requests.get("https://www.arab-books.com/%d8%a7%d9%84%d9%85%d8%a4%d9%84%d9%81%d9%88%d9%86//page/6")
+src = result.content 
+soup = BeautifulSoup(src,"lxml")
+author = soup.find_all("h3",{"class":"post-title"})
+for i in range( len(author) ):
+    
+    bname.append(author[i].find("a").attrs['href'])
+
+for i in range(len(bname)) :
+  resul=requests.get(bname[i])
+  src = resul.content
+  soup = BeautifulSoup(src,"lxml")
+  books = soup.find_all("h3",{"class":"post-title"})
+  for j in range(len(books)) :
+     links.append(books[j].text)
+     t.append(books[j].find("a").attrs['href'])
+for i in range( len(author) ):
+    m=c[i]
+    for j in range(m) :
+        a.append(author[i].text)
+
+
+result = requests.get("https://www.arab-books.com/%d8%a7%d9%84%d9%85%d8%a4%d9%84%d9%81%d9%88%d9%86//page/7")
+src = result.content 
+soup = BeautifulSoup(src,"lxml")
+author = soup.find_all("h3",{"class":"post-title"})
+for i in range( len(author) ):
+    
+    bname.append(author[i].find("a").attrs['href'])
+
+for i in range(len(bname)) :
+  resul=requests.get(bname[i])
+  src = resul.content
+  soup = BeautifulSoup(src,"lxml")
+  books = soup.find_all("h3",{"class":"post-title"})
+  for j in range(len(books)) :
+     links.append(books[j].text)
+     t.append(books[j].find("a").attrs['href'])
+for i in range( len(author) ):
+    m=c[i]
+    for j in range(m) :
+        a.append(author[i].text)
+
+
+
+result = requests.get("https://www.arab-books.com/%d8%a7%d9%84%d9%85%d8%a4%d9%84%d9%81%d9%88%d9%86//page/8")
+src = result.content 
+soup = BeautifulSoup(src,"lxml")
+author = soup.find_all("h3",{"class":"post-title"})
+for i in range( len(author) ):
+    
+    bname.append(author[i].find("a").attrs['href'])
+
+for i in range(len(bname)) :
+  resul=requests.get(bname[i])
+  src = resul.content
+  soup = BeautifulSoup(src,"lxml")
+  books = soup.find_all("h3",{"class":"post-title"})
+  for j in range(len(books)) :
+     links.append(books[j].text)
+     t.append(books[j].find("a").attrs['href'])
+for i in range( len(author) ):
+    m=c[i]
+    for j in range(m) :
+        a.append(author[i].text)
+
+
+
+result = requests.get("https://www.arab-books.com/%d8%a7%d9%84%d9%85%d8%a4%d9%84%d9%81%d9%88%d9%86//page/9")
+src = result.content 
+soup = BeautifulSoup(src,"lxml")
+author = soup.find_all("h3",{"class":"post-title"})
+for i in range( len(author) ):
+    
+    bname.append(author[i].find("a").attrs['href'])
+
+for i in range(len(bname)) :
+  resul=requests.get(bname[i])
+  src = resul.content
+  soup = BeautifulSoup(src,"lxml")
+  books = soup.find_all("h3",{"class":"post-title"})
+  for j in range(len(books)) :
+     links.append(books[j].text)
+     t.append(books[j].find("a").attrs['href'])
+for i in range( len(author) ):
+    m=c[i]
+    for j in range(m) :
+        a.append(author[i].text)
+
+
+
+result = requests.get("https://www.arab-books.com/%d8%a7%d9%84%d9%85%d8%a4%d9%84%d9%81%d9%88%d9%86//page/10")
+src = result.content 
+soup = BeautifulSoup(src,"lxml")
+author = soup.find_all("h3",{"class":"post-title"})
+for i in range( len(author) ):
+    
+    bname.append(author[i].find("a").attrs['href'])
+
+for i in range(len(bname)) :
+  resul=requests.get(bname[i])
+  src = resul.content
+  soup = BeautifulSoup(src,"lxml")
+  books = soup.find_all("h3",{"class":"post-title"})
+  for j in range(len(books)) :
+     links.append(books[j].text)
+     t.append(books[j].find("a").attrs['href'])
+for i in range( len(author) ):
+    m=c[i]
+    for j in range(m) :
+        a.append(author[i].text)
+
+
+
+path = "G:\FIFA 2014\scrapping\project.csv"
+fil = [a,links,t]
+ex= zip_longest(*fil)
+with open (path,"w",encoding = 'utf-8') as file :
+    wr = csv.writer(file)
+    wr.writerow(["Author","Book Name","Link to PDF"])
+    wr.writerows(ex)    
